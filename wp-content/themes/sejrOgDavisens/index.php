@@ -14,7 +14,6 @@ get_header();
                 <p> Se vores eventyrlige pension</p>
             </div>
         </a>
-        <h2>fuck nej om jeg skal spise min broccoli</h2>
         <a href="./internat.php" class="focusEntryPoint">
 
             <img src="<?php echo get_theme_file_uri('./assets/img/internat-hunde.jpg') ?>" alt="Tre hunde der bliver fodret af hånd">
