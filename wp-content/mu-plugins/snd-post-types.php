@@ -12,7 +12,9 @@ function snd_adoptions_dogs()
         'show_in_rest' => true,
         'supports' => [
             'title',
-            'editor'
+            'editor',
+            'thumbnail',
+            'custom-fields'
         ]
     ));
 }
@@ -29,7 +31,8 @@ function snd_adoptions_cats()
         'show_in_rest' => true,
         'supports' => [
             'title',
-            'editor'
+            'editor',
+            'custom-fields'
         ]
     ));
 }
@@ -37,6 +40,7 @@ function snd_articles()
 {
     register_post_type('articles', array(
         'public' => true,
+        'publicly_queryable' => true,
         'labels' => array(
             'name' => 'Articles',
             'add_new_item' => 'Add New Article',
@@ -47,7 +51,8 @@ function snd_articles()
         'supports' => [
             'title',
             'editor',
-            'excerpt'
+            'excerpt',
+            'thumbnail'
         ]
     ));
 }

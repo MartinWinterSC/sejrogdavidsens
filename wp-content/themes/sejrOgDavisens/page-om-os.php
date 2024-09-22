@@ -93,7 +93,7 @@ get_header();
                 </article>
 
             <?php
-            }
+                }
             ?>
 
         </section>

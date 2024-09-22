@@ -7,7 +7,7 @@
 
     <body>
         <header>
-            <a href="<?php echo site_url("/index") ?>"><img src="<?php echo get_theme_file_uri('./assets/img/SnDLogo.png') ?>"
+            <a href="<?php echo site_url() ?>"><img src="<?php echo get_theme_file_uri('./assets/img/SnDLogo.png') ?>"
                     alt="Et ikon af en hund og en kat med teks af internats ejere" class="logo"></a>
 
             <nav>

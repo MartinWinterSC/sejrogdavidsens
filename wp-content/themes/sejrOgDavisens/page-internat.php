@@ -238,15 +238,41 @@
                     </div>
 
                     <div class="animalContainer">
-                        <a href="individuelt-dyr.html" class="animalCard "><!-- HUSK UPDATE LINK!-->
 
-                            <img src="<?php echo get_theme_file_uri('./assets/img/placeholder.jpg') ?>" alt=""> <!-- HUSK UPDATE ALT TEKST!-->
-                            <div>
-                                <h3 class="name">Navn</h3>
-                                <p>Køn: <span class="speices">Art+køn</span></p>
-                                <p>Race: <span class="race"> Race</span></p>
-                            </div>
+                        <?php
+                            $adoptable_dogs = new WP_query([
+                            'post_type' => 'adoptable_dogs',
+                            'order' => 'ASC'
+                            ]);
+
+                            while ($adoptable_dogs -> have_posts()) {
+                            $adoptable_dogs -> the_post()
+                        ?>
+
+                        <a href="<?php the_permalink(); ?>" class="animalCard ">
+
+                        <?php the_post_thumbnail(); ?>
+                        <div>
+                            <h3 class="name"><?php the_title(); ?></h3>
+                            <?php 
+                                $custom_text = get_field('gender');
+
+                                if ($custom_text) {
+                                    echo '<p>Køn: <span class="speices">' . esc_html($custom_text) . '</span></p>';
+                                }
+                                $custom_text = get_field('race');
+
+                                if ($custom_text) {
+                                    echo '<p>Race: <span class="race">' . esc_html($custom_text) . '</span></p>';
+                                }
+                            ?>
+                        </div>
                         </a>
+
+                        <?php
+                            }
+                        ?>
+                        
                     </div>
                 </div>
 

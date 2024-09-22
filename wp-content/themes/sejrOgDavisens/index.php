@@ -52,50 +52,33 @@ get_header();
     <section class="articles">
         <h2>Nyeste artikler</h2>
         <div class="articleContainer">
-            <a href="#" class="articleCard ">
+            
+        <?php
 
-                <img src="./assets/img/kat-i-skab.jpg" alt="Kat der gemmer sig i et klædeskab">
-                <div>
-                    <p class="date">29-08-2024 </p>
-                    <p class="content">Folk har haft problemer på det seneste med at få deres katte til at føle sig
-                        hjemme, så vi kommer her med nogle tips og tricks til at...
-                    </p>
-                    <p class="author">Af Peter Johannesen</p>
-                </div>
-            </a>
-            <a href="#" class="articleCard ">
+$articles = new WP_Query([
+    'post_type' => 'articles',
+    'order' => 'ASC'
+]);
 
-                <img src="./assets/img/hund-i-bur.jpg" alt="Hund bag et risthegn">
-                <div>
-                    <p class="date">12-08-2024</p>
-                    <p class="content">Flere og flere hunde bliver efterladt, viser nye tal fra danmarks
-                        dyeforening, og det er ikke godt nok, derfor vil vi...
-                    </p>
-                    <p class="author">Af Amalie Krabbe</p>
-                </div>
-            </a>
-            <a href="#" class="articleCard ">
+while ($articles->have_posts()) {
+    $articles->the_post();
+    ?>
 
-                <img src="./assets/img/internatmedarbejder-hunde.jpg" alt="Ældre kvinde der sidder med tre hunde">
-                <div>
-                    <p class="date">12-07-2024</p>
-                    <p class="content">Hunde er et flokdyr, det ved de fleste forhåbentligt, men vidste du at det
-                        også har indflydelse på deres adfærd når de er alene...
-                    </p>
-                    <p class="author">Af Thomas Inger</p>
-                </div>
-            </a>
-            <a href="#" class="articleCard ">
+    <a href="#" class="articleCard ">
+        <?php the_post_thumbnail(); ?>
+        <div>
+            <p class="date"><?php the_date(); ?></p>
+            <p class="content">
+                <?php echo mb_strimwidth(get_the_content(), 0, 110, '...'); ?>
+            </p>
+            <p class="author"><?php the_author(); ?></p>
+        </div>
+    </a>
 
-                <img src="./assets/img/hund-og-killing.jpg" alt="Stor hund som ligger bag en lille killing">
-                <div>
-                    <p class="date">26-06-2024</p>
-                    <p class="content">Hunde og katte er naturlige fjender! Høre man en gang imellem nogen sige, men
-                        det er ikke sandt, hunde specielt kan...
-                    </p>
-                    <p class="author">Af Vibeke Sommer</p>
-                </div>
-            </a>
+    <?php
+}
+?>
+
         </div>
         <a href="#" class="btn">Se flere artikler</a>
 
