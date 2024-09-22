@@ -26,3 +26,4 @@
                 <button><i class="fa-solid fa-user"></i></button>
             </nav>
         </header>
+        <!-- Sets up the header -->

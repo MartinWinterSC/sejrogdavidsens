@@ -73,14 +73,14 @@ get_header();
             <h2 class="fullWidth">De Ansatte</h2>
 
             <?php
-
+            //Sets up the query to extract the data from "Employees"
             $employees = new WP_query([
                 'post_type' => 'employees',
                 'order' => 'ASC'
             ]);
 
-            while ($employees -> have_posts()) {
-                $employees -> the_post()
+            while ($employees->have_posts()) {
+                $employees->the_post()
             ?>
 
                 <article class="employeCard ">
@@ -93,7 +93,7 @@ get_header();
                 </article>
 
             <?php
-                }
+            }
             ?>
 
         </section>

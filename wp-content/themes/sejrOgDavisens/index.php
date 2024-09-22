@@ -52,32 +52,33 @@ get_header();
     <section class="articles">
         <h2>Nyeste artikler</h2>
         <div class="articleContainer">
-            
-        <?php
 
-$articles = new WP_Query([
-    'post_type' => 'articles',
-    'order' => 'ASC'
-]);
+            <?php
+            //Sets up the query to extract the data from "Articles"
+            $articles = new WP_Query([
+                'post_type' => 'articles',
+                'order' => 'ASC'
+            ]);
 
-while ($articles->have_posts()) {
-    $articles->the_post();
-    ?>
+            while ($articles->have_posts()) {
+                $articles->the_post();
+            ?>
 
-    <a href="#" class="articleCard ">
-        <?php the_post_thumbnail(); ?>
-        <div>
-            <p class="date"><?php the_date(); ?></p>
-            <p class="content">
-                <?php echo mb_strimwidth(get_the_content(), 0, 110, '...'); ?>
-            </p>
-            <p class="author"><?php the_author(); ?></p>
-        </div>
-    </a>
+                <a href="#" class="articleCard ">
+                    <?php the_post_thumbnail(); ?>
+                    <div>
+                        <p class="date"><?php the_date(); ?></p>
+                        <p class="content">
+                            <!-- Uses a function to trim the content so that only the characters from 0 (the first character due to it being 0 indexed) to 110 charácters -->
+                            <?php echo mb_strimwidth(get_the_content(), 0, 110, '...'); ?>
+                        </p>
+                        <p class="author"><?php the_author(); ?></p>
+                    </div>
+                </a>
 
-    <?php
-}
-?>
+            <?php
+            }
+            ?>
 
         </div>
         <a href="#" class="btn">Se flere artikler</a>
