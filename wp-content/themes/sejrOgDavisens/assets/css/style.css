@@ -100,6 +100,7 @@ section {
 img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 5/3;
     object-fit: cover;
     object-position: center;
     border-radius: var(--borderRadius);
@@ -185,6 +186,7 @@ header {
 
     .logo {
         width: 90px;
+        aspect-ratio: unset;
     }
 
     nav {
@@ -308,6 +310,7 @@ footer {
 
     .logo {
         width: 300px;
+        aspect-ratio: unset;
     }
 
     p,
@@ -411,7 +414,7 @@ button {
 
 /* --- FOCUS ENTRY POINT --- */
 .focusEntryPoint {
-    height: 400px;
+    height: 300px;
     display: flex;
     grid-column: span 5;
     border-radius: var(--borderRadius);
@@ -424,7 +427,7 @@ button {
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 20%;
+        height: 25%;
         border-radius: 0 0 var(--borderRadius) var(--borderRadius);
         display: flex;
         justify-content: center;
@@ -455,6 +458,7 @@ button {
         border-radius: 0 0 var(--borderRadius) var(--borderRadius);
         padding: var(--mediumSpacing);
         margin-top: -5px;
+        min-height: 210px;
     }
 
     p {
@@ -518,7 +522,7 @@ button {
     border-radius: var(--borderRadius);
     box-shadow: var(--shadow);
     transition: .5s;
-    height: 265px;
+    /* height: 265px; */
 
     img {
         border-radius: var(--borderRadius) var(--borderRadius)0 0;
@@ -530,6 +534,7 @@ button {
         border-radius: 0 0 var(--borderRadius) var(--borderRadius);
         padding: var(--mediumSpacing);
         margin-top: -5px;
+        min-height: 140px;
     }
 
     p,
@@ -700,6 +705,10 @@ button {
     p:first-child {
         font-weight: 700;
     }
+
+    a.btn:hover{
+        color: var(--baseTextDarkColor);
+    }
 }
 
 img.basicInfo {
@@ -723,6 +732,7 @@ img.basicInfo {
 
     img {
         width: calc(100% / 3 - 32px);
+        aspect-ratio: 1.5;
         display: block;
     }
 }
@@ -737,7 +747,7 @@ img.basicInfo {
     }
 
     #historie img {
-        height: 200px;
+        /* height: 200px; */
     }
 
     p {
@@ -981,6 +991,7 @@ img.basicInfo {
             img {
                 width: unset;
                 max-height: 90px;
+                aspect-ratio: unset;
             }
         }
 
