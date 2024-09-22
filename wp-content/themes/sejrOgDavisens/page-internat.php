@@ -279,7 +279,7 @@
             </section>
 
             <section class="fullWidth"> <!-- Test-->
-                <a href="./find-din-race-test.html" class="testFEP ">
+                <a href="<?php echo site_url("/find-din-race-test") ?>" class="testFEP ">
 
                     <img src="<?php echo get_theme_file_uri('./assets/img/test-hunde.jpg') ?>" alt="14 hunde af forskellige racer der står på række">
 
